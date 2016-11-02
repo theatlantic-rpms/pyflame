@@ -1,5 +1,5 @@
 Name:    pyflame
-Version: 1.2.0
+Version: 1.2.1
 Release: 1%{?dist}
 URL:     https://github.com/uber/pyflame
 Summary: Tool for profiling Python processes and generating flame graphs
@@ -33,7 +33,7 @@ used as an alternative to, or in conjunction with, existing Python profilers.
 %make_install
 
 %check
-./runtests.sh
+./runtests.sh fedora
 
 %files
 %{_bindir}/*
@@ -42,6 +42,10 @@ used as an alternative to, or in conjunction with, existing Python profilers.
 %license LICENSE
 
 %changelog
+* Wed Nov 02 2016 Evan Klitzke <evan@eklitzke.org> - 1.2.1-1
+- Get upstream v1.2.1 changes
+- Minor packaging/spec file cleanups
+
 * Wed Nov 02 2016 Evan Klitzke <evan@eklitzke.org> - 1.2.0-1
 - Get upstream v1.2.0 changes
 - Pyflame now supports both Python2 *and* Python3
