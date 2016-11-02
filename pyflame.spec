@@ -41,6 +41,10 @@ bash runtests.sh
 %license LICENSE
 
 %changelog
+* Wed Nov 02 2016 Evan Klitzke <evan@eklitzke.org> - 1.2.0-1
+- Get upstream v1.2.0 changes
+- Pyflame now supports both Python2 *and* Python3
+
 * Sat Oct 29 2016 Evan Klitzke <evan@eklitzke.org> - 1.1.1-1
 - Get new v1.1.1 release from upstream
 - Various packaging changes
