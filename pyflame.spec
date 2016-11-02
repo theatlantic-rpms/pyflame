@@ -37,7 +37,7 @@ bash runtests.sh
 %files
 %{_bindir}/*
 %doc README.md
-/usr/share/man/man1/pyflame.1.gz
+%{_mandir}/man1/pyflame.1*
 %license LICENSE
 
 %changelog
