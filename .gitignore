@@ -1,0 +1,5 @@
+*.rpm
+*.srpm
+[0-9]*-pyflame/
+pyflame-*/
+*.tar.gz
