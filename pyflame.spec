@@ -9,10 +9,11 @@ Source0: https://github.com/uber/%{name}/archive/v%{version}.tar.gz#/%{name}-%{v
 BuildRequires: autoconf
 BuildRequires: automake
 BuildRequires: gcc-c++
+BuildRequires: libtool
 BuildRequires: python-devel
 BuildRequires: python3-devel
 BuildRequires: python2-pytest
-BuildRequires: python2-virtualenv
+BuildRequires: python3-pytest
 
 %description
 Pyflame is a Python profiler that can generate flame graphs from Python
@@ -32,12 +33,12 @@ used as an alternative to, or in conjunction with, existing Python profilers.
 %make_install
 
 %check
-bash runtests.sh
+./runtests.sh
 
 %files
 %{_bindir}/*
-%doc README.md
 %{_mandir}/man1/pyflame.1*
+%doc README.md
 %license LICENSE
 
 %changelog
