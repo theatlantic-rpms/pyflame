@@ -1,5 +1,5 @@
 Name:    pyflame
-Version: 1.2.1
+Version: 1.6.0
 Release: 1%{?dist}
 URL:     https://github.com/uber/pyflame
 Summary: Tool for profiling Python processes and generating flame graphs
@@ -42,6 +42,9 @@ used as an alternative to, or in conjunction with, existing Python profilers.
 %license LICENSE
 
 %changelog
+* Wed Nov 08 2017 Evan Klitzke <evan@eklitzke.org> - 1.6.0-1
+- rebuilt
+
 * Wed Nov 02 2016 Evan Klitzke <evan@eklitzke.org> - 1.2.1-1
 - Get upstream v1.2.1 changes
 - Minor packaging/spec file cleanups
