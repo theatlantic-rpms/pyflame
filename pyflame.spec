@@ -1,6 +1,6 @@
 Name:    pyflame
-Version: 1.6.2
-Release: 5%{?dist}
+Version: 1.6.3
+Release: 1%{?dist}
 URL:     https://github.com/uber/%{name}
 Summary: Tool for profiling Python processes and generating flame graphs
 License: ASL 2.0
