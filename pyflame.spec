@@ -1,6 +1,6 @@
 Name:    pyflame
 Version: 1.6.2
-Release: 1%{?dist}
+Release: 2%{?dist}
 URL:     https://github.com/uber/%{name}
 Summary: Tool for profiling Python processes and generating flame graphs
 License: ASL 2.0
@@ -10,7 +10,7 @@ BuildRequires: autoconf
 BuildRequires: automake
 BuildRequires: gcc-c++
 BuildRequires: libtool
-%if 0%{?rhel} == 6
+%if 0%{?el7}
 BuildRequires: pytest
 BuildRequires: python-devel
 BuildRequires: python34-devel
@@ -49,6 +49,9 @@ used as an alternative to, or in conjunction with, existing Python profilers.
 %license LICENSE
 
 %changelog
+* Mon Nov 13 2017 Evan Klitzke <evan@eklitzke.org> - 1.6.2-2
+- Fix a bad conditional.
+
 * Mon Nov 13 2017 Evan Klitzke <evan@eklitzke.org> - 1.6.2-1
 - Update for new EPEL7 tests.
 
