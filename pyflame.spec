@@ -50,7 +50,7 @@ used as an alternative to, or in conjunction with, existing Python profilers.
 
 %changelog
 * Mon Nov 13 2017 Evan Klitzke <evan@eklitzke.org> - 1.6.2-2
-- Fix a bad conditional.
+- Fix a bad conditional. Test.
 
 * Mon Nov 13 2017 Evan Klitzke <evan@eklitzke.org> - 1.6.2-1
 - Update for new EPEL7 tests.
