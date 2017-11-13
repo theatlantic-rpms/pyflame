@@ -1,11 +1,10 @@
 Name:    pyflame
 Version: 1.6.2
-Release: 3%{?dist}
+Release: 4%{?dist}
 URL:     https://github.com/uber/%{name}
 Summary: Tool for profiling Python processes and generating flame graphs
 License: ASL 2.0
-#Source0: https://github.com/uber/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
-Source0: https://github.com/uber/%{name}/archive/fscheck/%{name}-%{version}.tar.gz
+Source0: https://github.com/uber/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires: autoconf
 BuildRequires: automake
@@ -34,6 +33,7 @@ used as an alternative to, or in conjunction with, existing Python profilers.
 
 %build
 ./autogen.sh
+python34 -c 'import sys; print(sys.getfilesystemencoding())'
 %configure
 %make_build
 
@@ -50,6 +50,9 @@ used as an alternative to, or in conjunction with, existing Python profilers.
 %license LICENSE
 
 %changelog
+* Mon Nov 13 2017 Evan Klitzke <evan@eklitzke.org> - 1.6.2-4
+- new version
+
 * Mon Nov 13 2017 Evan Klitzke <evan@eklitzke.org> - 1.6.2-3
 - rebuilt
 
