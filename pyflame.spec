@@ -1,6 +1,6 @@
 Name:    pyflame
-Version: 1.6.0
-Release: 2%{?dist}
+Version: 1.6.1
+Release: 1%{?dist}
 URL:     https://github.com/uber/%{name}
 Summary: Tool for profiling Python processes and generating flame graphs
 License: ASL 2.0
@@ -33,7 +33,7 @@ used as an alternative to, or in conjunction with, existing Python profilers.
 %make_install
 
 %check
-./runtests.sh fedora
+./runtests.sh rpm
 
 %files
 %{_bindir}/*
@@ -42,6 +42,12 @@ used as an alternative to, or in conjunction with, existing Python profilers.
 %license LICENSE
 
 %changelog
+* Mon Nov 13 2017 Evan Klitzke <evan@eklitzke.org> - 1.6.1-1
+- Import new version whose tests should work.
+
+* Mon Nov 13 2017 Evan Klitzke <evan@eklitzke.org> - 1.6.0-3
+- Update the test command
+
 * Mon Nov 13 2017 Evan Klitzke <evan@eklitzke.org> - 1.6.0-2
 - rebuilt
 
