@@ -1,10 +1,12 @@
 Name:    pyflame
 Version: 1.6.4
-Release: 1%{?dist}
+Release: 2%{?dist}
 URL:     https://github.com/uber/%{name}
 Summary: Tool for profiling Python processes and generating flame graphs
 License: ASL 2.0
 Source0: https://github.com/uber/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
+
+Patch1:        0001-fix-executable.patch
 
 BuildRequires: autoconf
 BuildRequires: automake
@@ -30,6 +32,7 @@ used as an alternative to, or in conjunction with, existing Python profilers.
 
 %prep
 %autosetup -n %{name}-%{version}
+%patch1 -p1
 
 %build
 ./autogen.sh
@@ -49,6 +52,9 @@ used as an alternative to, or in conjunction with, existing Python profilers.
 %license LICENSE
 
 %changelog
+* Thu Apr 19 2018 Evan Klitzke <evan@eklitzke.org> - 1.6.4-2
+- fix error w/ executable name for f28/rawhide
+
 * Thu Apr 19 2018 Evan Klitzke <evan@eklitzke.org> - 1.6.4-1
 - new version
 
