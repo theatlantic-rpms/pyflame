@@ -32,7 +32,6 @@ used as an alternative to, or in conjunction with, existing Python profilers.
 
 %prep
 %autosetup -n %{name}-%{version}
-%patch1 -p1
 
 %build
 ./autogen.sh
