@@ -6,8 +6,6 @@ Summary: Tool for profiling Python processes and generating flame graphs
 License: ASL 2.0
 Source0: https://github.com/uber/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
 
-Patch1:        0001-fix-executable.patch
-
 BuildRequires: autoconf
 BuildRequires: automake
 BuildRequires: gcc-c++
