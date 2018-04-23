@@ -1,6 +1,6 @@
 Name:    pyflame
-Version: 1.6.4
-Release: 3%{?dist}
+Version: 1.6.6
+Release: 1%{?dist}
 URL:     https://github.com/uber/%{name}
 Summary: Tool for profiling Python processes and generating flame graphs
 License: ASL 2.0
@@ -49,6 +49,12 @@ used as an alternative to, or in conjunction with, existing Python profilers.
 %license LICENSE
 
 %changelog
+* Wed May 02 2018 Evan Klitzke <evan@eklitzke.org> - 1.6.6-1
+- update for pyflame 1.6.6
+
+* Mon Apr 23 2018 Evan Klitzke <evan@eklitzke.org> - 1.6.5-1
+- Upgrade for Pyflame 1.6.5, fixes packaging errors on F28/Rawhide
+
 * Mon Apr 23 2018 Evan Klitzke <evan@eklitzke.org> - 1.6.4-3
 - remove unneeded patch file
 
