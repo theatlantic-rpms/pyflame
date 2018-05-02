@@ -11,7 +11,7 @@
 
 Name:    pyflame
 Version: 1.6.6
-Release: 2%{?dist}
+Release: 3%{?dist}
 URL:     https://github.com/uber/%{name}
 Summary: Tool for profiling Python processes and generating flame graphs
 License: ASL 2.0
@@ -36,9 +36,7 @@ BuildRequires: python3-pytest
 %endif
 %if %{enable_py2}
 BuildRequires: python2-devel
-%if 0%{?fedora} <= 27 || !%{enable_py3}
 BuildRequires: python2-pytest
-%endif
 %endif
 %endif
 
@@ -69,9 +67,11 @@ used as an alternative to, or in conjunction with, existing Python profilers.
 %license LICENSE
 
 %changelog
+* Wed May 02 2018 Evan Klitzke <evan@eklitzke.org> - 1.6.6-3
+- Fix regression where py2 test suite did not run on Fedora28
+
 * Wed May 02 2018 Evan Klitzke <evan@eklitzke.org> - 1.6.6-2
 - Add macros to toggle building python2/3 support
-- On Fedora 28+, do not build require python2-pytest when py3 is enabled
 
 * Wed May 02 2018 Evan Klitzke <evan@eklitzke.org> - 1.6.6-1
 - update for pyflame 1.6.6
