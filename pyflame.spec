@@ -1,17 +1,6 @@
-# set to 1 if python2 support should be built
-%define enable_py2 1
-
-# set to 1 if python3 support should be built
-%define enable_py3 1
-
-# ensure that at least one of enable_py{2,3} is set
-%if !%{enable_py2} && !%{enable_py3}
-%{error: must set at least one of enable_py2/enable_py3}
-%endif
-
 Name:    pyflame
-Version: 1.6.6
-Release: 4%{?dist}
+Version: 1.6.7
+Release: 1%{?dist}
 URL:     https://github.com/uber/%{name}
 Summary: Tool for profiling Python processes and generating flame graphs
 License: ASL 2.0
@@ -21,24 +10,10 @@ BuildRequires: autoconf
 BuildRequires: automake
 BuildRequires: gcc-c++
 BuildRequires: libtool
-
-%if 0%{?el7}
-BuildRequires: pytest
-BuildRequires: python-devel
-%if %{enable_py3}
-BuildRequires: python34-devel
-BuildRequires: python34-pytest
-%endif
-%else
-%if %{enable_py3}
-BuildRequires: python3-devel
-BuildRequires: python3-pytest
-%endif
-%if %{enable_py2}
 BuildRequires: python2-devel
 BuildRequires: python2-pytest
-%endif
-%endif
+BuildRequires: python3-devel
+BuildRequires: python3-pytest
 
 %description
 Pyflame is a Python profiler that can generate flame graphs from Python
@@ -67,6 +42,10 @@ used as an alternative to, or in conjunction with, existing Python profilers.
 %license LICENSE
 
 %changelog
+* Fri Jul 13 2018 Frankie Dintino <fdintino@gmail.com> - 1.6.7-1
+- Update to 1.6.7
+- Build with both python2 and python3
+
 * Wed May 02 2018 Evan Klitzke <evan@eklitzke.org> - 1.6.6-4
 - Include NEWS.org file as a doc file
 
