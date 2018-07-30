@@ -1,0 +1,29 @@
+From b3d2c79fd6be0d25b6a9564036b0ac4658f0f3ee Mon Sep 17 00:00:00 2001
+From: Frankie Dintino <fdintino@gmail.com>
+Date: Sun, 29 Jul 2018 15:54:58 -0400
+Subject: [PATCH 1/2] support all python2 pkgconfig files
+
+---
+ configure.ac | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+diff --git a/configure.ac b/configure.ac
+index 81d421c..03997a5 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -96,7 +96,11 @@ AC_DEFINE_UNQUOTED(
+   [A string containing build information.])
+ 
+ enable_py26=no
+-PKG_CHECK_MODULES([PY26], [python2], [enable_py26="yes"], [AC_MSG_WARN([Building without Python 2.6/2.7 support])])
++PKG_CHECK_MODULES([PY26], [python2],
++  [enable_py26="yes"],
++  [PKG_CHECK_MODULES([PY26], [python-2.7],
++    [enable_py26="yes"],
++    [AC_MSG_WARN([Building without Python 2.6/2.7 support])])])
+ AM_CONDITIONAL([ENABLE_PY26], [test x"$enable_py26" = xyes])
+ AM_COND_IF([ENABLE_PY26], [AC_DEFINE([ENABLE_PY26], [1], [Python 2.6/2.7 will be enabled])])
+ 
+-- 
+2.11.0
+

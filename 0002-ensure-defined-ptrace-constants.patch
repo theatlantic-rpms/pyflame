@@ -1,0 +1,31 @@
+From 855df9191821d94a6a9112fac6696bf4af9f8060 Mon Sep 17 00:00:00 2001
+From: Frankie Dintino <fdintino@gmail.com>
+Date: Sun, 29 Jul 2018 19:47:37 -0400
+Subject: [PATCH 2/2] ensure defined ptrace constants
+
+---
+ src/ptrace.h | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/src/ptrace.h b/src/ptrace.h
+index d6af8bf..98d1abc 100644
+--- a/src/ptrace.h
++++ b/src/ptrace.h
+@@ -23,6 +23,14 @@
+ 
+ #include "./config.h"
+ 
++#ifndef PTRACE_SEIZE
++#define PTRACE_SEIZE        0x4206
++#endif
++
++#ifndef PTRACE_INTERRUPT
++#define PTRACE_INTERRUPT    0x4207
++#endif
++
+ #if defined(__arm__)
+ typedef struct user_regs user_regs_struct;
+ #else
+-- 
+2.11.0
+
